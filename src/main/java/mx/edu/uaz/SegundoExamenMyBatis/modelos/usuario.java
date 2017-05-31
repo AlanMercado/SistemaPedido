@@ -9,7 +9,7 @@ public class usuario {
 	private String perfil;
 	private String password;
 	private String email;
-	public usuario(){
+	public void usuario(){
 		
 	}
 	public int getIdUsuario() {

@@ -4,8 +4,8 @@ public class director {
 	private int idDirector;
 	private String nombre;
 	public director(){
-		
-	}
+	
+}
 	public int getIdDirector() {
 		return idDirector;
 	}
@@ -18,6 +18,5 @@ public class director {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
 	
 }

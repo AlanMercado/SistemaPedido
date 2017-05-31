@@ -20,6 +20,7 @@ public class ListaPeliculasPrestadas extends CssLayout{
         usuario user = (usuario) VaadinSession.getCurrent().getAttribute("usuario");
         p = new ADPelicula().obtenerRentadas(user.getIdUsuario());
 
+    
         grid = new Grid<pelicula>(pelicula.class);
         grid.setStyleName("mi-grid");
         grid.setItems(p);

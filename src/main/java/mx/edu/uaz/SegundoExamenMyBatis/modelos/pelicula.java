@@ -3,15 +3,15 @@ package mx.edu.uaz.SegundoExamenMyBatis.modelos;
 public class pelicula {
 	private int idPelicula;
 	private String titulo;
-	private int duracion;
+	private String duracion;
 	private String clasificacion;
 	private int idGenero;
 	private int estreno;
 	private int idDirector;
 	private String estatus;
 	public pelicula(){
-		
-	}
+	
+}
 	public int getIdPelicula() {
 		return idPelicula;
 	}
@@ -24,10 +24,10 @@ public class pelicula {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public int getDuracion() {
+	public String getDuracion() {
 		return duracion;
 	}
-	public void setDuracion(int duracion) {
+	public void setDuracion(String duracion) {
 		this.duracion = duracion;
 	}
 	public String getClasificacion() {
@@ -60,5 +60,5 @@ public class pelicula {
 	public void setEstatus(String estatus) {
 		this.estatus = estatus;
 	}
-	
+
 }

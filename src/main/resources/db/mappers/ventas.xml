@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mx.edu.uaz.persitencia.config.mappers">
+
+<select id="todasVentas" resultMap="resultMapVentas">
+	SELECT V.idVenta,V.costo_total,V.fecha_venta,M.nombre,V.idPedido,P.fecha_pedido,P.fecha_entrega,P.total
+	FROM ventas V INNER JOIN materiales M on V.idMaterial=M.idMaterial INNER JOIN pedido P on P.idPedido=V.idPedido;
+</select>
+
+<insert id="guardarVentas" parameterType="Ventas" >
+	INSERT INTO ventas 
+			(idVenta,idMaterial,costo_total,fecha_venta,idPedido)
+	VALUES	(#{idVenta},#{idMaterial},#{costo_total},#{fecha_venta},#{idPedido});
+</insert>
+
+
+
+<resultMap type="Ventas" id="resultMapVentas">
+	<id property="idVenta" column="idVenta"/>
+	<result property="costo_total" column="costo_total"/>
+	<result property="fecha_venta" column="fecha_venta"/>
+	<result property="idMaterial" column="nombre"/>
+	<result property="idPedido" column="idPedido"/>
+</resultMap>
+
+</mapper>

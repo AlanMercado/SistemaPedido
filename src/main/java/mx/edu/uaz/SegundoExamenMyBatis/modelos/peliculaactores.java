@@ -3,9 +3,9 @@ package mx.edu.uaz.SegundoExamenMyBatis.modelos;
 public class peliculaactores {
 	private int idPelicula;
 	private int idActor;
-	public peliculaactores(){
-	 
- }
+	public peliculaactores() {
+	
+}
 	public int getIdPelicula() {
 		return idPelicula;
 	}
@@ -18,5 +18,5 @@ public class peliculaactores {
 	public void setIdActor(int idActor) {
 		this.idActor = idActor;
 	}
- 
+	
 }

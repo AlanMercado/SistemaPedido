@@ -25,6 +25,7 @@ public class FormUsers extends HorizontalLayout {
 	protected CssLayout menu;
 	protected Button usuario;
 	protected Button reports;
+	protected Button cerrar;
 	protected Label viewTitle;
 	protected CssLayout content;
 	protected CssLayout contenido;

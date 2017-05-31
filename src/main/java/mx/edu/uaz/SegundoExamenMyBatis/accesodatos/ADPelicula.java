@@ -1,6 +1,7 @@
 package mx.edu.uaz.SegundoExamenMyBatis.accesodatos;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,11 +24,11 @@ public class ADPelicula {
 		boolean ok = false;
 		SqlSession sesion = PersistenciaSesion.getSqlMapper().openSession();
 		try {
-			sesion.insert("guardarUsuario", pelicula);
+			sesion.insert("guardarPelicula", pelicula);
 			sesion.commit();
 			ok = true;
 		} catch (Exception e) {
-			Notification.show("Error al guardar el usuario ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
+			Notification.show("Error al guardar pelicula ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
 		}
 		finally {
 			sesion.close();
@@ -61,23 +62,23 @@ public class ADPelicula {
 			sesion.commit();
 			ok = true;
 		} catch (Exception e) {
-			Notification.show("Error al Actualizar el usuario ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
+			Notification.show("Error al Actualizar la Pelicula ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
 		}
 		finally {
 			sesion.close();
 		}
 		return ok;
 	}
-	public boolean eliminar( List<Integer> usuario){
+	public boolean eliminar( List<Integer> pelicula){
 		
 		boolean ok = false;
 		SqlSession sesion = PersistenciaSesion.getSqlMapper().openSession();
 		try {
-			sesion.delete("borrarUsuarios", usuario);
+			sesion.delete("borrarPelicula", pelicula);
 			sesion.commit();
 			ok = true;
 		} catch (Exception e) {
-			Notification.show("Error al borrar el usuario ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
+			Notification.show("Error al borrar la pelicula ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
 		}
 		finally {
 			sesion.close();
@@ -87,6 +88,21 @@ public class ADPelicula {
 	
 	public List<pelicula> obtenerTodos(){
 		List<pelicula> peliculas =null;
+		SqlSession sesion = PersistenciaSesion.getSqlMapper().openSession();
+		try {
+			peliculas = sesion.selectList("todosPeliculas");
+			
+		} catch (Exception e) {
+			Notification.show("Error al recuperar la lista de Peliculas ", e.getCause().getMessage(),Notification.Type.ERROR_MESSAGE);
+		}
+		finally {
+			sesion.close();
+		}
+		return peliculas;
+	}
+	
+	public Collection<String> obtenerTodos2(){
+		Collection<String> peliculas =null;
 		SqlSession sesion = PersistenciaSesion.getSqlMapper().openSession();
 		try {
 			peliculas = sesion.selectList("todosPeliculas");

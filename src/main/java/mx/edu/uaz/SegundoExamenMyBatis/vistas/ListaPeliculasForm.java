@@ -9,6 +9,7 @@ import java.util.Set;
 
 import org.vaadin.dialogs.ConfirmDialog;
 
+import com.vaadin.data.Binder;
 import com.vaadin.event.selection.SelectionEvent;
 import com.vaadin.event.selection.SelectionListener;
 import com.vaadin.icons.VaadinIcons;
@@ -37,6 +38,7 @@ import mx.edu.uaz.SegundoExamenMyBatis.modelos.usuario;
 
 
 
+
 public class ListaPeliculasForm extends CssLayout{
 	
 	private Grid<pelicula> grid;
@@ -48,6 +50,9 @@ public class ListaPeliculasForm extends CssLayout{
 	private Button btnEliminar;
 	private Set<pelicula> currentlyEditing;
 	private Set<pelicula> currentlyEditing2;
+	
+	private Binder<pelicula> binder;	
+	List<Integer>eliminar;
 	
 	@SuppressWarnings("unchecked")
 	public ListaPeliculasForm(){
@@ -85,10 +90,39 @@ public class ListaPeliculasForm extends CssLayout{
 		VerticalLayout vl= new VerticalLayout();
 		
 		btnAgregar = new Button("Rentar", VaadinIcons.ALARM);
-		
+		btnEliminar= new Button("Eliminar", VaadinIcons.DOCTOR);
 		//btnAgregar.addClickListener(new EliminarUsuario());
 		
-		addComponents(grid, btnAgregar);
+		addComponents(grid, btnAgregar,btnEliminar);
+		btnEliminar.setEnabled(false);
+		
+		btnEliminar.addClickListener(new ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				adPelicula=new ADPelicula();
+				boolean ok=false;
+				
+				currentlyEditing= grid.getSelectedItems();
+				for(pelicula bugEntry: currentlyEditing){
+					eliminar.add(bugEntry.getIdPelicula());
+				}
+				
+				ok=adPelicula.eliminar(eliminar);
+				if(ok){
+					Notification.show("Se Elimino correctamente el estado "+ pelicula.getTitulo(),Notification.Type.WARNING_MESSAGE);
+					
+					pelicula=new pelicula();
+					binder.setBean(pelicula);
+					grid.setItems(adPelicula.obtenerTodos());
+					btnAgregar.setCaption("Agregar");
+					eliminar=new ArrayList<Integer>();
+					
+				}
+			}
+			
+		});
 		
 		
 		

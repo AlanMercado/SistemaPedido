@@ -1531,6 +1531,144 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
+.mytheme .form-template {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding: 18.5px;
+	min-width: 320px;
+}
+
+.mytheme .form-template .title {
+	font-size: 19.2px;
+	font-weight: 600;
+	padding-bottom: 18.5px;
+}
+
+.mytheme .form-template .v-caption-form-section {
+	text-transform: uppercase;
+	font-size: 12.8px;
+	color: #797979;
+	font-weight: 600;
+	padding-bottom: 0;
+	width: 100%;
+}
+
+.mytheme .form-template .input-wrapper {
+	padding: 9.25px;
+	line-height: 37px;
+}
+
+.mytheme .form-template .input-group {
+	width: 100%;
+}
+
+.mytheme .form-template .text-wrapper {
+	padding: 18.5px;
+	background: white;
+}
+
+.mytheme .form-template .form-section {
+	padding: 9.25px 0 37px;
+	width: 100%;
+	border-top: 1px solid #c5c5c5;
+}
+
+.mytheme .form-template .input-wrapper .v-caption {
+	display: block;
+}
+
+.mytheme .form-template .v-button.borderless {
+	color: #197de1;
+}
+
+.mytheme .form-template .input-wrapper .v-widget + .v-widget {
+	margin-left: 18.5px;
+}
+
+.mytheme .form-template .align-bottom {
+	vertical-align: bottom;
+}
+
+.mytheme .form-template .border {
+	border: 1px solid #dfdfdf;
+	margin: 9.25px 0;
+}
+
+.mytheme .form-template[width-range~="-550px"] .input-wrapper {
+	width: 100%;
+}
+
+.mytheme .form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption {
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	padding-right: 6.16667px;
+	padding-bottom: 0;
+	vertical-align: top;
+}
+
+.mytheme .form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-tiny {
+	height: 28px;
+	line-height: 28px;
+}
+
+.mytheme .form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-small {
+	height: 31px;
+	line-height: 31px;
+}
+
+.mytheme .form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-large {
+	height: 44px;
+	line-height: 44px;
+}
+
+.mytheme .form-template[width-range~="551px-"] .caption-left .input-wrapper .v-caption.v-caption-huge {
+	height: 59px;
+	line-height: 59px;
+}
+
+.mytheme .form-template[width-range~="551-750px"] .input-wrapper {
+	width: 50%;
+}
+
+.mytheme .form-template[width-range~="551-750px"] .caption-left .input-wrapper {
+	width: 100%;
+}
+
+.mytheme .form-template[width-range~="551-750px"] .caption-left .input-wrapper  > .v-widget {
+	width: 65% !important;
+	float: right;
+}
+
+.mytheme .form-template[width-range~="551-750px"] .caption-left .input-wrapper  > .v-caption {
+	text-align: right;
+	width: 35%;
+	box-sizing: border-box;
+}
+
+.mytheme .form-template[width-range~="-750px"] .title, .mytheme .form-template[width-range~="-750px"] .v-caption-form-section {
+	text-align: center;
+}
+
+.mytheme .form-template[width-range~="-750px"] .input-wrapper .v-datefield, .mytheme .form-template[width-range~="-750px"] .v-textfield, .mytheme .form-template[width-range~="-750px"] .v-filterselect, .mytheme .form-template[width-range~="-750px"] .v-textarea {
+	width: 100%;
+}
+
+.mytheme .form-template[width-range~="-750px"] .input-wrapper .v-widget + .v-widget {
+	margin-left: 0;
+	margin-top: 9.25px;
+}
+
+.mytheme .form-template[width-range~="-750px"] .input-group {
+	margin-bottom: 18.5px;
+}
+
+.mytheme .form-template[width-range~="-750px"] .v-captiontext {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+
 .mytheme .app-shell .custom-menubar .v-menubar-menuitem {
 	position: relative;
 }
@@ -12681,4 +12819,339 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	width: 19px;
 	overflow: hidden;
+}
+
+.mytheme .admin .mi-grid button {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.mytheme .admin .otra {
+	overflow: hidden;
+}
+
+.mytheme .admin .label-title {
+	background-color: #26baff;
+	color: white !important;
+}
+
+.mytheme .admin .navigation-bar {
+	background-color: #fc2f39 !important;
+}
+
+.mytheme .admin .navigation-bar .navigation {
+	border-top: 1px;
+	border-bottom: 1px;
+	background: #db2b34;
+}
+
+.mytheme .admin .navigation-bar .v.caption, .mytheme .admin .navigation-bar .v-icon {
+	color: white !important;
+}
+
+.mytheme .admin .navigation-bar .v-button.borderless:hover {
+	color: #fff !important;
+	background: #c92730 !important;
+}
+
+.mytheme .admin .navigation-bar .v-button {
+	color: white !important;
+}
+
+.mytheme .admin .layoutImage {
+	background-color: cyan;
+}
+
+.mytheme .admin .custom-principal {
+	background-size: cover;
+	background-color: #DADADA;
+	padding: 85px;
+	height: 100%;
+}
+
+.mytheme .admin .imglog {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.mytheme .admin .login {
+	background-color: white;
+	padding: 23px;
+	width: 450px;
+	margin: auto;
+	height: 175px;
+	margin-top: 13px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.mytheme .admin .login input[type="text"], .mytheme .admin .login input[type="password"] {
+	width: 95%;
+	font-family: Vaadin-Icons;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.mytheme .admin .login .btn-login {
+	text-align: center;
+	background-color: #40b5ad;
+	color: black;
+	border-radius: 4px;
+	width: 427px;
+	height: 42px;
+}
+
+.mytheme .admin .signup-2 {
+	color: blue;
+	text-align: center;
+	background-color: white;
+	padding: 23px;
+	width: 495px;
+	margin: auto;
+	height: 57px;
+	margin-bottom: 19px;
+	padding: 0px;
+}
+
+.mytheme .admin .signup-2 .pclase {
+	margin-bottom: -3px;
+}
+
+.mytheme .admin .principal {
+	height: 100%;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .admin .header {
+	height: 150px;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .admin .header img {
+	width: 100px;
+	float: left;
+	margin: 20px;
+}
+
+.mytheme .admin .header p {
+	text-align: center;
+	font-size: 20px;
+}
+
+.mytheme .admin .lateral {
+	width: 17%;
+	height: 60%;
+	background-color: #ffffff;
+	float: left;
+	padding: 1%;
+}
+
+.mytheme .admin .contenedor {
+	margin-top: -1px;
+	width: 77%;
+	height: 100%;
+	float: right;
+	padding: 1%;
+}
+
+.mytheme .admin .contenido-class {
+	overflow: auto;
+	height: 58%;
+	position: absolute;
+}
+
+.mytheme .admin .footer {
+	height: 100px;
+	width: 100%;
+	background-color: #ffffff;
+	bottom: 0px;
+	position: absolute;
+	text-align: center;
+}
+
+.mytheme .admin .mi-ventana {
+	background-color: #aac5dd;
+}
+
+.mytheme .admin .mi-ventana .v-window-header {
+	background-color: blue;
+	color: white;
+	font-size: 20px;
+}
+
+.mytheme .admin .logo {
+	font-size: 17px;
+	color: white;
+	padding-left: 10%;
+}
+
+.mytheme .admin .view-title {
+	font-size: 20px;
+	color: black;
+	padding-left: 2%;
+}
+
+.mytheme .mi-grid button {
+	background-image: url("img/edit.png");
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.mytheme .otra {
+	overflow: hidden;
+}
+
+.mytheme .label-title {
+	background-color: #26baff;
+	color: white !important;
+}
+
+.mytheme .navigation-bar {
+	background-color: black !important;
+}
+
+.mytheme .navigation-bar .navigation {
+	border-top: 1px solid #454a50;
+	border-bottom: 1px solid #454a50;
+	background: #292b2d;
+}
+
+.mytheme .navigation-bar .v.caption, .mytheme .navigation-bar .v-icon {
+	color: #26baff !important;
+}
+
+.mytheme .navigation-bar .v-button.borderless:hover {
+	color: #fff !important;
+	background: #353535 !important;
+}
+
+.mytheme .navigation-bar .v-button {
+	color: white !important;
+}
+
+.mytheme .layoutImage {
+	background-color: cyan;
+}
+
+.mytheme .custom-principal {
+	background-size: cover;
+	background-color: #DADADA;
+	padding: 85px;
+	height: 100%;
+}
+
+.mytheme .imglog {
+	margin-top: 15px;
+	text-align: center;
+}
+
+.mytheme .login {
+	background-color: white;
+	padding: 23px;
+	width: 450px;
+	margin: auto;
+	height: 175px;
+	margin-top: 13px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.mytheme .login input[type="text"], .mytheme .login input[type="password"] {
+	width: 95%;
+	font-family: Vaadin-Icons;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.mytheme .login .btn-login {
+	text-align: center;
+	background-color: #40b5ad;
+	color: white;
+	border-radius: 4px;
+	width: 427px;
+	height: 42px;
+}
+
+.mytheme .signup-2 {
+	color: blue;
+	text-align: center;
+	background-color: white;
+	padding: 23px;
+	width: 495px;
+	margin: auto;
+	height: 57px;
+	margin-bottom: 19px;
+	padding: 0px;
+}
+
+.mytheme .signup-2 .pclase {
+	margin-bottom: -3px;
+}
+
+.mytheme .principal {
+	height: 100%;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .header {
+	height: 150px;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .header img {
+	width: 100px;
+	float: left;
+	margin: 20px;
+}
+
+.mytheme .header p {
+	text-align: center;
+	font-size: 20px;
+}
+
+.mytheme .lateral {
+	width: 17%;
+	height: 60%;
+	background-color: #ffffff;
+	float: left;
+	padding: 1%;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .contenedor {
+	margin-top: -1px;
+	width: 77%;
+	height: 100%;
+	float: right;
+	padding: 1%;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .footer {
+	height: 100px;
+	width: 100%;
+	background-color: #ffffff;
+	bottom: 0px;
+	position: absolute;
+	text-align: center;
+	border-color: #516ff9;
+	border-style: ridge;
+}
+
+.mytheme .mi-ventana {
+	background-color: #aac5dd;
+}
+
+.mytheme .mi-ventana .v-window-header {
+	background-color: blue;
+	color: white;
+	font-size: 20px;
 }

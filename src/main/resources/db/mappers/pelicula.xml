@@ -3,6 +3,16 @@
 
 <mapper namespace="mx.edu.uaz.SegundoExamenMyBatis.config.mappers">
 
+
+<insert id="guardarPelicula" parameterType="pelicula">
+	INSERT INTO pelicula(titulo,duracion,clasificacion,idGenero,estreno,idDirector,estatus)
+	VALUES(#{titulo},#{duracion},#{clasificacion},#{idGenero.idGenero},#{estreno},#{idDirector});
+</insert>
+
+<delete id="borrarPelicula" parameterType="pelicula">
+	DELETE FROM pelicula WHERE idPelicula=#{idPelicula};
+</delete>
+
 <select id="todosPeliculas" resultMap="resultMappelicula">
 	SELECT U.idPelicula,U.titulo,U.duracion,U.clasificacion,U.idGenero,U.estreno,U.estreno,U.idDirector,U.estatus
 	FROM pelicula U where U.estatus!=1;
@@ -17,7 +27,7 @@ SET estatus=#{estatus} WHERE idPelicula=#{idPelicula};
     SELECT P.idPelicula,P.titulo FROM Pelicula P INNER JOIN DetalleRenta DR on P.idPelicula=DR.idPelicula INNER JOIN Renta R on R.idRenta=DR.idRenta INNER JOIN Usuario U on U.idUsuario=R.idUsuario AND U.idUsuario=#{idUsuario};
 </select>
 
-<resultMap type="Pelicula" id="resultMapPelicula">
+<resultMap type="pelicula" id="resultMapPelicula">
         <id property="idPelicula" column="idPelicula"/>
         <result property="titulo" column="titulo"/>
         <result property="duracion" column="duracion"/>

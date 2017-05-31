@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.2">
+ </head>
+ <body>
+  <vaadin-css-layout style-name="form-template" responsive size-full>
+   <vaadin-label style-name="title" width-full plain-text>
+     Materiales 
+   </vaadin-label>
+   <vaadin-css-layout caption="Agregar Material" style-name="form-section" height="843px">
+    <vaadin-css-layout></vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group" height="117px">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Nombre" _id="tfNombre"></vaadin-text-field>
+      <vaadin-css-layout style-name="input-wrapper"></vaadin-css-layout>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-area caption="Descripción" width="352px" height="111px" _id="jTADescripcion"></vaadin-text-area>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Precio" _id="tfPrecio"></vaadin-text-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Cantidad" _id="tfCantidad"></vaadin-text-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout width="465px">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Tipo" width="257px" _id="tfTipo"></vaadin-text-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group" width="148px">
+     <vaadin-combo-box caption="Promo" width="124px" data-item-type="java.lang.String" _id="cbPromo">
+      <option item="Si">Si</option>
+      <option item="No">No</option>
+     </vaadin-combo-box>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-wrapper" width="573px">
+     <vaadin-text-field caption="Precio Promo" width="257px" _id="tfPrecioPromo"></vaadin-text-field>
+    </vaadin-css-layout>
+   </vaadin-css-layout>
+   <vaadin-horizontal-layout width="307px">
+    <vaadin-button icon="fonticon://Vaadin-Icons/e620" style-name="primary" plain-text _id="btnAgregar">
+      Agregar 
+    </vaadin-button>
+    <vaadin-button plain-text _id="cancel">
+      Cancel 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+   <vaadin-css-layout width="591px"></vaadin-css-layout>
+   <vaadin-css-layout width="1000px" height="140px" _id="layoutGrid"></vaadin-css-layout>
+  </vaadin-css-layout>
+ </body>
+</html>
