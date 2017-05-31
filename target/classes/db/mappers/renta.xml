@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="mx.edu.uaz.SegundoExamenMyBatis.config.mappers">
+<insert id="guardarRenta" parameterType="renta" >
+	INSERT INTO renta 
+			(idRenta,fecha,idUsuario)
+	VALUES	(#{idRenta},#{fecha},#{idUsuario});
+</insert>
+<select id="obtenerTodosRenta" resultType="renta" >
+	SELECT  idRenta 
+	FROM renta ORDER BY idRenta DESC;		
+</select>
+</mapper>

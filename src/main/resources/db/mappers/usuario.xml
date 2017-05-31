@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mx.edu.uaz.persitencia.config.mappers">
+<select id="obtenerUser" resultType="usuario" >
+	SELECT  idUsuario,nombre,apellidos,password,email 
+	FROM usuario;		
+</select>
+<!-- 
+<insert id="guardarUsuario" parameterType="Usuario" >
+	INSERT INTO Usuario 
+			(nombre,apellidos,email,fecha,telefono,idEstado)
+	VALUES	(#{nombre},#{apellidos},#{email},#{fecha},#{telefono},#{idEstado.idEstado});
+</insert>
+
+<delete  id="borrarUsuario" parameterType="Usuario" >
+	DELETE FROM Usuario WHERE idUsuario=#{idUsuario};
+</delete>
+
+ <delete  id="borrarUsuarios" parameterType="map">
+ 
+	 DELETE FROM Usuario WHERE idUsuario in <foreach collection="list" item="item" separator="," open="("  close=")">#{item} </foreach>;
+	
+		
+</delete>
+
+
+
+<update id="actualizarUsuario" parameterType="Usuario">
+UPDATE Usuario
+SET nombre=#{nombre},apellidos=#{apellidos},email=#{email},fecha=#{fecha},telefono=#{telefono},idEstado=#{idEstado.idEstado} WHERE idUsuario=#{idUsuario};
+</update>
+
+
+-->
+
+<!-- <select id="todosAlumnos" resultType="Alumno"> -->
+<!-- 	SELECT idAlumno,nombre,apellidos,mail,matricula,fechaNac,idEstado -->
+<!-- 	FROM Alumno; -->
+<!-- </select> -->
+<!-- 
+<select id="todosUsuarios" resultMap="resultMapUsuario">
+	SELECT U.idUsuario,U.nombre,U.apellidos,U.email,U.telefono,U.fecha,E.idEstado,E.nombre as estado
+	FROM Usuario U INNER JOIN Estado E on U.idEstado=E.idEstado;
+</select>
+
+<resultMap type="Usuario" id="resultMapUsuario">
+	<id property="idUsuario" column="idUsuario"/>
+	<result property="nombre" column="nombre"/>
+	<result property="apellidos" column="apellidos"/>
+	<result property="email" column="email"/>
+	<result property="telefono" column="telefono"/>
+	<result property="fecha" column="fecha"/>
+	<association property="idEstado" javaType="Estado">
+		<id property="idEstado" column="idEstado"/>
+		<result property="nombre" column="estado"/>
+	</association>
+</resultMap>
+-->
+<!-- 
+<select id="buscarAlumnoPorID" resultMap="resultMapAlumno" parameterType="int">
+	SELECT A.idAlumno,A.nombre,A.apellidos,A.mail,A.matricula,A.fechaNac,E.idEstado,E.nombre as estado
+	FROM Alumno A INNER JOIN Estado E on A.idEstado=E.idEstado
+	WHERE idAlumno = #{idAlumno};
+</select>
+
+<delete id="eliminar" parameterType="int">
+	DELETE FROM Alumno
+	WHERE idAlumno = #{idAlumno}
+</delete>
+
+<update id="modificar" parameterType="Alumno">
+	UPDATE Alumno
+	SET nombre=#{nombre},
+		apellidos=#{apellidos},
+		mail=#{mail},
+		matricula=#{matricula},
+		fechaNac=#{fechaNac},
+		idEstado=#{estado.idEstado}
+	WHERE 
+		idAlumno=#{idAlumno}
+	
+</update>
+-->
+</mapper>
+	
+ 

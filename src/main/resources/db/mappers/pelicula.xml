@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mx.edu.uaz.SegundoExamenMyBatis.config.mappers">
+
+<select id="todosPeliculas" resultMap="resultMappelicula">
+	SELECT U.idPelicula,U.titulo,U.duracion,U.clasificacion,U.idGenero,U.estreno,U.estreno,U.idDirector,U.estatus
+	FROM pelicula U where U.estatus!=1;
+</select>
+
+<update id="actualizarPelicula" parameterType="pelicula">
+UPDATE pelicula
+SET estatus=#{estatus} WHERE idPelicula=#{idPelicula};
+</update>
+
+<select id="obtenPeliculasRentadas" resultMap="resultMapPelicula" parameterType="int">
+    SELECT P.idPelicula,P.titulo FROM Pelicula P INNER JOIN DetalleRenta DR on P.idPelicula=DR.idPelicula INNER JOIN Renta R on R.idRenta=DR.idRenta INNER JOIN Usuario U on U.idUsuario=R.idUsuario AND U.idUsuario=#{idUsuario};
+</select>
+
+<resultMap type="Pelicula" id="resultMapPelicula">
+        <id property="idPelicula" column="idPelicula"/>
+        <result property="titulo" column="titulo"/>
+        <result property="duracion" column="duracion"/>
+        <result property="clasificacion" column="clasificacion"/>
+        <result property="idGenero" column="idGenero"/>
+        <result property="estreno" column="estreno"/>
+        <result property="idDirector" column="idDirector"/>
+        <result property="estatus" column="estatus"/>
+    </resultMap>
+
+<resultMap type="pelicula" id="resultMappelicula">
+	<id property="idPelicula" column="idPelicula"/>
+	<result property="titulo" column="titulo"/>
+	<result property="duracion" column="duracion"/>
+	<result property="clasificacion" column="clasificacion"/>
+	<result property="idGenero" column="idGenero"/>
+	<result property="estreno" column="estreno"/>
+	<result property="idDirector" column="idDirector"/>
+	<result property="estatus" column="estatus"/>
+
+</resultMap>
+</mapper>

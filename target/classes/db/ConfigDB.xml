@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+    
+  <configuration>
+	<typeAliases>
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.actor" alias="actor" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.detallerenta" alias="detallerenta" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.director" alias="director" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.genero" alias="genero" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.pelicula" alias="pelicula" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.peliculaactores" alias="peliculaactores" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.renta" alias="renta" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.usuario" alias="usuario" />
+	</typeAliases>
+	
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/video_club?useSSL=false&amp;serverTimezone=UTC" />
+				<property name="username" value="root" />
+				<property name="password" value="" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		
+		
+	
+		<mapper resource="db/mappers/pelicula.xml" />
+		<mapper resource="db/mappers/renta.xml" />
+		<mapper resource="db/mappers/detallerenta.xml" />
+		<mapper resource="db/mappers/usuario.xml" />
+		
+	</mappers>
+</configuration>
+  
+  
+  
