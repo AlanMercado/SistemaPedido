@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mx.edu.uaz.SegundoExamenMyBatis.config.mappers">
+
+<insert id="guardarUsuarios" parameterType="Usuarios" >
+	INSERT INTO Usuarios 
+			(nombre,apellidos,email,usuario,password,telefono,tipo)
+	VALUES	(#{nombre},#{apellidos},#{email},#{usuario},#{password},#{telefono},#{tipo});
+</insert>
+
+<delete  id="borrarUsuario" parameterType="Usuarios" >
+	DELETE FROM Usuarios WHERE idUsuario=#{idUsuario};
+</delete>
+
+ <delete  id="borrarUsuarios" parameterType="map">
+ 
+	 DELETE FROM Usuarios WHERE idUsuario in <foreach collection="list" item="item" separator="," open="("  close=")">#{item} </foreach>;
+	
+		
+</delete>
+
+
+
+<update id="actualizarUsuario" parameterType="Usuarios">
+UPDATE Usuarios
+SET nombre=#{nombre},apellidos=#{apellidos},email=#{email},telefono=#{telefono} WHERE idUsuario=#{idUsuario};
+</update>
+
+
+
+
+<!-- <select id="todosAlumnos" resultType="Alumno"> -->
+<!-- 	SELECT idAlumno,nombre,apellidos,mail,matricula,fechaNac,idEstado -->
+<!-- 	FROM Alumno; -->
+<!-- </select> -->
+
+<select id="todosUsuarios" resultMap="resultMapUsuario">
+	SELECT idUsuario,nombre,apellidos,email,usuario,password,telefono,tipo
+	FROM usuarios;
+</select>
+
+<resultMap type="Usuarios" id="resultMapUsuario">
+	<id property="idUsuario" column="idUsuario"/>
+	<result property="nombre" column="nombre"/>
+	<result property="apellidos" column="apellidos"/>
+	<result property="email" column="email"/>
+	
+	<result property="usuario" column="usuario"/>
+	<result property="password" column="password"/>
+	<result property="telefono" column="telefono"/>
+	<result property="tipo" column="tipo"/>
+	
+
+</resultMap>
+
+
+
+</mapper>
+	

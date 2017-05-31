@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mx.edu.uaz.persitencia.config.mappers">
+
+
+<insert id="guardarPedido" parameterType="Pedido" >
+	INSERT INTO Pedido 
+			(fecha_pedido,total,idMaterial,estatus,cantidad,idUsuario,alto,ancho)
+	VALUES	(#{fecha_pedido},#{total},#{idMaterial.idMaterial},#{estatus},#{cantidad},#{idUsuario},#{alto},#{ancho});
+</insert>
+
+
+<select id="todosPedidos" resultMap="resultMapPedido">
+	SELECT P.idPedido,P.fecha_pedido,P.fecha_entrega,P.total,M.idMaterial,M.nombre,P.estatus,P.cantidad,U.nombre as usuario,P.alto,P.ancho
+	FROM pedido P INNER JOIN materiales M on P.idMaterial=M.idMaterial INNER JOIN usuarios U on U.idUsuario=P.idUsuario AND P.estatus!=1;
+</select>
+
+
+<select id="todosPedidosUser" resultMap="resultMapPedido" parameterType="int">
+	SELECT P.idPedido,P.fecha_pedido,P.fecha_entrega,P.total,M.idMaterial,M.nombre,P.estatus,P.cantidad,U.nombre as usuario,P.alto,P.ancho
+	FROM pedido P INNER JOIN materiales M on P.idMaterial=M.idMaterial INNER JOIN usuarios U on U.idUsuario=P.idUsuario AND P.idUsuario=#{idUsuario};
+</select>
+
+<update id="actualizarPedido" parameterType="Pedido">
+UPDATE Pedido
+SET fecha_entrega=#{fecha_entrega},estatus=#{estatus} WHERE idPedido=#{idPedido};
+</update>
+
+
+<resultMap type="Pedido" id="resultMapPedido">
+	<id property="idPedido" column="idPedido"/>
+	<result property="fecha_pedido" column="fecha_pedido"/>
+	<result property="fecha_entrega" column="fecha_entrega"/>
+	<result property="total" column="total"/>
+	
+	<result property="estatus" column="estatus"/>
+	<result property="cantidad" column="cantidad"/>
+	<result property="idUsuario" column="usuario"/>
+	<result property="alto" column="alto"/>
+	<result property="ancho" column="ancho"/>
+	<association property="idMaterial" javaType="Materiales">
+		<id property="idMaterial" column="idMaterial"/>
+		<result property="nombre" column="nombre"/>
+	</association>
+</resultMap>
+
+</mapper>

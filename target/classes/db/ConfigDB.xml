@@ -4,14 +4,11 @@
     
   <configuration>
 	<typeAliases>
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.actor" alias="actor" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.detallerenta" alias="detallerenta" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.director" alias="director" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.genero" alias="genero" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.pelicula" alias="pelicula" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.peliculaactores" alias="peliculaactores" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.renta" alias="renta" />
-		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.usuario" alias="usuario" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.Materiales" alias="Materiales" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.Pedido" alias="Pedido" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.Usuarios" alias="Usuarios" />
+		<typeAlias type="mx.edu.uaz.SegundoExamenMyBatis.modelos.Ventas" alias="Ventas" />
+		
 	</typeAliases>
 	
 	<environments default="mysql">
@@ -19,7 +16,7 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="UNPOOLED">
 				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://127.0.0.1:3306/video_club?useSSL=false&amp;serverTimezone=UTC" />
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/hdapp?useSSL=false&amp;serverTimezone=UTC" />
 				<property name="username" value="root" />
 				<property name="password" value="" />
 			</dataSource>
@@ -30,10 +27,12 @@
 		
 		
 	
-		<mapper resource="db/mappers/pelicula.xml" />
-		<mapper resource="db/mappers/renta.xml" />
-		<mapper resource="db/mappers/detallerenta.xml" />
-		<mapper resource="db/mappers/usuario.xml" />
+		
+		<mapper resource="db/mappers/materiales.xml" />
+		<mapper resource="db/mappers/ventas.xml" />
+		<mapper resource="db/mappers/pedido.xml" />
+		<mapper resource="db/mappers/usuarios.xml" />
+		
 		
 	</mappers>
 </configuration>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD iBatis Mapper 3.0 //EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="mx.edu.uaz.persitencia.config.mappers">
+
+<insert id="guardarMateriales" parameterType="Materiales" >
+	INSERT INTO Materiales 
+			(nombre,descripcion,precio,cantidad,tipo,precio_promo,promo)
+	VALUES	(#{nombre},#{descripcion},#{precio},#{cantidad},#{tipo},#{precio_promo},#{promo});
+</insert>
+<delete  id="borrarMateriales" parameterType="map">
+ 
+	 DELETE FROM Materiales WHERE idMaterial in <foreach collection="list" item="item" separator="," open="("  close=")">#{item} </foreach>;
+	
+		
+</delete>
+
+<update id="actualizarMateriales" parameterType="Materiales">
+UPDATE Materiales
+SET nombre=#{nombre},descripcion=#{descripcion},precio=#{precio},cantidad=#{cantidad},tipo=#{tipo},precio_promo=#{precio_promo},promo=#{promo} WHERE idMaterial=#{idMaterial};
+</update>
+
+
+<select id="obtenerTodosMate" resultType="Materiales" >
+	SELECT  idMaterial,nombre,descripcion,precio,cantidad,tipo,precio_promo,promo 
+	FROM materiales;		
+</select>
+
+<select id="obtenerMate" resultType="Materiales" parameterType="String">
+	SELECT idMaterial,nombre,descripcion,precio,cantidad,tipo 
+	FROM materiales where tipo=#{tipo} AND cantidad>0;		
+</select>
+
+<select id="obtenUnidad" resultType="Materiales" parameterType="String">
+	SELECT idMaterial,nombre,descripcion,precio,cantidad,tipo 
+	FROM materiales where tipo=#{tipo} AND cantidad>0;		
+</select>
+
+
+</mapper>

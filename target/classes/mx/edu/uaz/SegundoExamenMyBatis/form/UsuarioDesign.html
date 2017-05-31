@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.2">
+ </head>
+ <body>
+  <vaadin-css-layout style-name="form-template" responsive size-full>
+   <vaadin-label style-name="title" width-full plain-text>
+     Usuarios 
+   </vaadin-label>
+   <vaadin-css-layout caption="Personal info" style-name="form-section" responsive height="560px">
+    <vaadin-css-layout style-name="input-group" height="116px">
+     <vaadin-css-layout style-name="input-wrapper" height="116px">
+      <vaadin-text-field caption="Nombre" _id="tfNombre"></vaadin-text-field>
+      <vaadin-css-layout style-name="input-wrapper"></vaadin-css-layout>
+     </vaadin-css-layout>
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Apellidos" _id="tfApellidos"></vaadin-text-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group"></vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="E-mail" _id="tfEmail"></vaadin-text-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group">
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Teléfono" _id="tfTelefono"></vaadin-text-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-wrapper" responsive>
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-text-field caption="Usuario" width="175px" _id="tfUsuario"></vaadin-text-field>
+      <vaadin-password-field caption="Contraseña" width="163px" height="37px" _id="pfContra"></vaadin-password-field>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="input-group"></vaadin-css-layout>
+   </vaadin-css-layout>
+   <vaadin-css-layout style-name="form-section" responsive width-full>
+    <vaadin-css-layout style-name="input-group" width-full>
+     <vaadin-css-layout style-name="input-wrapper">
+      <vaadin-horizontal-layout>
+       <vaadin-button icon="fonticon://Vaadin-Icons/e620" style-name="primary" plain-text _id="btnAgregar">
+         Agregar 
+       </vaadin-button>
+       <vaadin-button plain-text _id="cancel">
+         Cancel 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-css-layout>
+    </vaadin-css-layout>
+   </vaadin-css-layout>
+  </vaadin-css-layout>
+ </body>
+</html>
